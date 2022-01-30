@@ -5,30 +5,42 @@ header {
     background-color: #004175;
     color: white;
     text-align: left;
-    padding-left: .5in;
+    padding-left: 50px;
     border-bottom: 3px;
     border-style: solid;
     border-bottom-color: #89DEEF;
     font-family: "Open Sans";
 }
-
+/*
+* {
+    outline: 1px solid red;
+}
+*/
 h1 {
     color: white
+    padding-left: 50px;
 }
 
 h2 {
     font-family: "Open Sans";
-
+    padding-left: 50px;
 }
 
-/*remove the bullet points from the list*/
+p {
+    font-family: "Open Sans";
+    padding-left: 50px;
+}
+
+
+/*why is the list justified to the right without adding the negative margin?*/
 ul {
-    list-style: none;
+    list-style: none; /*removes the bullet points from the list*/
     display: flex;
     flex-wrap: wrap; 
-    font-family: "Open Sans";
-    
+    font-family: "Open Sans"; 
+    margin-left: -40px;
 }
+
 /*mozilla says that adding this below will fix an issue with screen readers and using list-style:none*/
 ul li::before {
     content: "\200B";
@@ -36,9 +48,12 @@ ul li::before {
 
 li {
     background: #89DEEF;
-    margin-right: 2mm;
-    border: 6px;
+    margin-right: 4px;
+    margin-bottom: 3px;
+    border: 2px solid #89DEEF;
     border-radius: 15px;
+    padding-left: 3px;
+    padding-right: 3px;
     font-size: 10pt;
 }
 
@@ -47,16 +62,94 @@ img {
     height: auto;
 }
 
-.dog-parent {
+.dog-grid {
     display: flex;
     flex-wrap: wrap;
+    flex: 0 1 auto; /*not sure this is doing anything/being used correctly*/
     margin: 10px;
-    gap: 300px 10px; 
+    gap: 325px 10px; 
+    padding: 50px; 
 }
 
 .dog-child {
-    width: 3.5in;
+    width: 3.5in; /*couldn't get this to work otherwise, but using inches doesn't seem ideal??*/
     height: 90px;
 }
 
+footer {
+    display: flex;
+    flex-wrap: nowrap;
+    font-family: "Oswald";
+    text-align: center;
+    font-size: 2.2em;
+    color: white;
+    margin-top: 4px;
+    /*height: 200px;*/ 
+}
+.donate-box {
+    flex: 1 1 0;
+    position: relative;
+    height: 300px;
+    text-align: center;
+    color: white; 
+    background: linear-gradient(
+    rgba(166, 169, 240, 0.70),
+    rgba(166, 169, 240, 0.70)
+    ),
+    /*bottom layer, photo */ 
+    url('starter_files/images/donate.jpg');
+    background-size: cover;
+}
 
+.donate {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    
+}
+
+.volunteer-box {
+    flex: 1 1 0;
+    position: relative;
+    height: 300px;
+    text-align: center;
+    color: white; 
+    background: linear-gradient(
+    rgba(166, 169, 240, 0.70),
+    rgba(166, 169, 240, 0.70)
+    ),
+    /*bottom layer, photo */ 
+    url('starter_files/images/volunteer.jpg');
+    background-size: cover;
+    
+}
+
+.volunteer {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);  
+}
+
+.location-box {
+    flex: 1 1 0;
+    position: relative;
+    height: 300px;
+    text-align: center;
+    color: white; 
+    background: linear-gradient(
+    rgba(166, 169, 240, 0.70),
+    rgba(166, 169, 240, 0.70)
+    ),
+    /*bottom layer, photo */ 
+    url('starter_files/images/location.png');
+    background-size: cover;
+}
+
+.location {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); 
+}
